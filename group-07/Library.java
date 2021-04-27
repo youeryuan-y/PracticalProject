@@ -17,6 +17,17 @@ String bookname;
     public String getPrice() {
         return price;
     }
+public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getPublish() {
+        return publish;
+    }
+
+    public void setPublish(String publish) {
+        this.publish = publish;
+    }
 
     //TODO：陈思欣
 	public Library(String bookname, String price, String publish) {
