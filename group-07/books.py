@@ -20,7 +20,7 @@ selector = lxml.html.fromstring(html)
 price = selector.xpath('//div[@class="p-price"]/strong/i/text()')
 #print(number)
 name = selector.xpath('//div[@class="p-name"]/a/em/text()')
-print(name)
+#print(name)
 chuban = selector.xpath('//div[@class="p-bookdetails"]/span/a/text()')
 #print(chuban)
 
@@ -28,23 +28,7 @@ chuban = selector.xpath('//div[@class="p-bookdetails"]/span/a/text()')
 # In[52]:
 
 //TODO：陈思欣
-cun1=list()
-for j in range (0,30):
-    cun = dict() 
-    cun["书名"]=name[j]
-    cun["价格"]=price[j] 
-    cun["出版社"]=chuban[j]
-    cun1.append(cun)
-print(cun1)
 
-
-# In[51]:
-
-
-with open('211804153_01.csv','w',newline='',encoding='utf-8-sig')as f :
-    writer=csv.DictWriter(f,fieldnames=["书名","价格","出版社"])
-    writer.writeheader()
-    writer.writerows(cun1)
 
 
 # In[ ]:
