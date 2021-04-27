@@ -27,6 +27,13 @@ public class LibraryDao {
             }else {
                 selectStr="select * from library ";
             }
+            set= statement.executeQuery(selectStr);
+            String price,publish;
+            while (set.next()){   //遍历 resultSet
+                price= set.getString("price");
+                publish=set.getString("publish");
+                System.out.println(bookname+price+publish);
+            }
     //删除
     //TODO：周帮华
     public void deleteByBookname(String bookname){
