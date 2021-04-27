@@ -34,6 +34,18 @@ public class LibraryDao {
                 publish=set.getString("publish");
                 System.out.println(bookname+price+publish);
             }
+//            System.out.println(teachers);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("查询失败");
+        }finally {
+            if (set!=null){
+                try {
+                    set.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
     //删除
     //TODO：周帮华
     public void deleteByBookname(String bookname){
