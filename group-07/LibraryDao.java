@@ -49,6 +49,37 @@ public class LibraryDao {
 
     //添加
     //TODO：周帮华
+    public void insert(String bookname){
+        Connection connection=DBconnection.getConnection();// 获取连接
+        Statement statement=null;
+        try {
+            statement =connection.createStatement(); //通过连接获取 statement 对象
+            String insertStr="insert into library (bookname) values('"+bookname+"')";
+            int i= statement.executeUpdate(insertStr);  //通过 statement 执行sql 语句  返回操作的条数
+            if (i>0){
+                System.out.println( "插入成功");
+            }else {
+                System.out.println("插入失败");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if (statement!=null){
+                try {
+                    statement.close();  //关闭连接
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection!=null){
+                try {
+                    connection.close(); //关闭连接
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 
 }
