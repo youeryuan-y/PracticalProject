@@ -46,6 +46,22 @@ public class LibraryDao {
                     e.printStackTrace();
                 }
             }
+            if (statement!=null){
+                try {
+                    statement.close();  //关闭连接
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection!=null){
+                try {
+                    connection.close(); //关闭连接
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
     //删除
     //TODO：周帮华
     public void deleteByBookname(String bookname){
