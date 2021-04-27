@@ -24,9 +24,16 @@ public class DBconnection {
         }
     }
 
-    public static Connection getConnection(){
-        //TODO：赵智兴
 
+public static Connection getConnection(){
+    //TODO：赵智兴
+        Connection connection= null;
+        try {
+            connection = DriverManager.getConnection(url,userName,passWord);  //获取数据库连接
+            System.out.println("数据库连接成功");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("数据库连接失败");
+        }
+        return connection;
     }
-
-}
